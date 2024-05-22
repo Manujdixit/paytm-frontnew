@@ -10,6 +10,10 @@ import {
   Link,
   Button,
 } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
+import { Avatar } from "@nextui-org/avatar";
+import { Accordion, AccordionItem } from "@nextui-org/react";
+
 import "./home.css";
 import { Player } from "@lottiefiles/react-lottie-player";
 
@@ -184,178 +188,191 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100  flex justify-center">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm ">
-                  How it Works
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Seamless Digital Wallet Experience
-                </h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
-                  Our virtual wallet app makes it easy to manage your finances
-                  on the go. Store your cards, send and receive payments, and
-                  track your spending all in one secure place.
-                </p>
-              </div>
+        <section class="max-w-5xl mx-auto w-full px-10 py-10 bg-white">
+          <div class="flex items-center justify-center flex-col gap-y-2 py-5">
+            <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm">
+              Testimonials
             </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-64">
-              <div className="flex flex-col justify-center space-y-4 lg:ml-8">
-                <ul className="grid gap-6">
-                  <li>
-                    <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Store Your Cards</h3>
-                      <p className="text-gray-500 ">
-                        Add your debit, credit, and loyalty cards to your
-                        digital wallet for easy access.
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Send and Receive</h3>
-                      <p className="text-gray-500 ">
-                        Securely send and receive payments with friends, family,
-                        and businesses.
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Track Spending</h3>
-                      <p className="text-gray-500 ">
-                        Monitor your transactions and spending history to better
-                        manage your finances.
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <Player
-                className="hidden lg:block"
-                autoplay
-                loop
-                src="https://lottie.host/c10e3119-6f58-4fb7-a436-57be2e359856/wEEBIpa2sN.json"
-                style={{ height: "450px", width: "450px" }}
-              ></Player>
-            </div>
-          </div>
-        </section> */}
 
-        {/* <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                  Testimonials
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  What Our Users Say
-                </h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Hear from our satisfied customers about their experience with
-                  our virtual wallet app.
+            <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl text-center">
+              Here's what our <br />
+              <span class="text-blue-700"> customers</span> have to say
+            </h2>
+            <p class="text-lg font-medium text-slate-700">
+              Discover how our service can benefit you
+            </p>
+          </div>
+          <div class="mt-8 grid grid-cols-1 lg:grid-cols-5 gap-5 w-full">
+            <div class="border p-7 rounded-xl bg-blue-700 drop-shadow-md border-neutral-800/50 col-span-2 flex flex-col gap-y-10 justify-between">
+              <div class="flex flex-col gap-y-3.5">
+                <p class="font-bold text-xl text-white">
+                  Efficient customer support
+                </p>
+                <p class="font-medium text-white">
+                  The customer support team at our service is incredibly
+                  responsive and helpful. They went above and beyond to assist
+                  me with my issue.
                 </p>
               </div>
-              <Carousel className="w-full max-w-3xl">
-                <CarouselContent>
-                  <CarouselItem>
-                    <Card>
-                      <CardContent className="space-y-4">
-                        <blockquote className="text-lg font-semibold leading-snug">
-                          "The Wallet app has been a game-changer for managing
-                          my finances. It's so convenient and secure."
-                        </blockquote>
-                        <div className="flex items-center space-x-4">
-                          <img
-                            alt="Avatar"
-                            className="h-12 w-12 rounded-full"
-                            height="48"
-                            src="/placeholder.svg"
-                            style={{
-                              aspectRatio: "48/48",
-                              objectFit: "cover",
-                            }}
-                            width="48"
-                          />
-                          <div>
-                            <div className="font-medium">Jane Doe</div>
-                            <div className="text-sm text-gray-500 dark:text-gray-400">
-                              Small Business Owner
-                            </div>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Card>
-                      <CardContent className="space-y-4">
-                        <blockquote className="text-lg font-semibold leading-snug">
-                          "I love how the Wallet app makes it easy to track my
-                          spending and stay on top of my finances."
-                        </blockquote>
-                        <div className="flex items-center space-x-4">
-                          <img
-                            alt="Avatar"
-                            className="h-12 w-12 rounded-full"
-                            height="48"
-                            src="/placeholder.svg"
-                            style={{
-                              aspectRatio: "48/48",
-                              objectFit: "cover",
-                            }}
-                            width="48"
-                          />
-                          <div>
-                            <div className="font-medium">John Smith</div>
-                            <div className="text-sm text-gray-500 dark:text-gray-400">
-                              Freelance Designer
-                            </div>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Card>
-                      <CardContent className="space-y-4">
-                        <blockquote className="text-lg font-semibold leading-snug">
-                          "The Wallet app has simplified my financial life. I
-                          highly recommend it to anyone looking to better manage
-                          their money."
-                        </blockquote>
-                        <div className="flex items-center space-x-4">
-                          <img
-                            alt="Avatar"
-                            className="h-12 w-12 rounded-full"
-                            height="48"
-                            src="/placeholder.svg"
-                            style={{
-                              aspectRatio: "48/48",
-                              objectFit: "cover",
-                            }}
-                            width="48"
-                          />
-                          <div>
-                            <div className="font-medium">Sarah Lee</div>
-                            <div className="text-sm text-gray-500 dark:text-gray-400">
-                              Accountant
-                            </div>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
+              <div class="flex flex-col">
+                <img
+                  src="https://randomuser.me/api/portraits/women/43.jpg"
+                  alt="Emily Smith"
+                  class="h-10 w-10"
+                />
+                <p class="pt-2 text-sm font-semibold text-white">Emily Smith</p>
+                <p class="text-sm font-medium text-slate-100/70">
+                  Marketing Manager at ABC Company
+                </p>
+              </div>
+            </div>
+            <div class="border p-7 rounded-xl bg-neutral-900 drop-shadow-md border-neutral-800/50 col-span-3 flex flex-col gap-y-10 justify-between">
+              <div class="flex flex-col gap-y-3.5">
+                <p class="font-bold text-xl text-white">
+                  Excellent product features
+                </p>
+                <p class="font-medium text-white">
+                  The features offered by our service are outstanding. They have
+                  greatly improved our workflow and efficiency.
+                </p>
+              </div>
+              <div class="flex flex-col">
+                <img
+                  src="https://randomuser.me/api/portraits/men/34.jpg"
+                  alt="Michael Johnson"
+                  class="h-10 w-10"
+                />
+                <p class="pt-2 text-sm font-semibold text-white">
+                  Michael Johnson
+                </p>
+                <p class="text-sm font-medium text-slate-100/70">
+                  CEO at XYZ Corporation
+                </p>
+              </div>
+            </div>
+            <div class="border p-7 rounded-xl bg-neutral-900 drop-shadow-md border-neutral-800/50 col-span-3 flex flex-col gap-y-10 justify-between">
+              <div class="flex flex-col gap-y-3.5">
+                <p class="font-bold text-xl text-white">
+                  Seamless integration process
+                </p>
+                <p class="font-medium text-white">
+                  Integrating our systems with our service was smooth and
+                  hassle-free. The support team guided us through every step of
+                  the process.
+                </p>
+              </div>
+              <div class="flex flex-col">
+                <img
+                  src="https://randomuser.me/api/portraits/women/71.jpg"
+                  alt="Sarah Brown"
+                  class="h-10 w-10"
+                />
+                <p class="pt-2 text-sm font-semibold text-white">Sarah Brown</p>
+                <p class="text-sm font-medium text-slate-100/70">
+                  CTO at XYZ Corporation
+                </p>
+              </div>
+            </div>
+            <div class="border p-7 rounded-xl bg-green-600 drop-shadow-md border-neutral-800/50 col-span-2 flex flex-col gap-y-10 justify-between">
+              <div class="flex flex-col gap-y-3.5">
+                <p class="font-bold text-xl text-white">
+                  Reliable service uptime
+                </p>
+                <p class="font-medium text-white">
+                  Our service has consistently maintained high uptime, ensuring
+                  that our operations run smoothly without any disruptions.
+                </p>
+              </div>
+              <div class="flex flex-col">
+                <img
+                  src="https://randomuser.me/api/portraits/men/71.jpg"
+                  alt="James White"
+                  class="h-10 w-10"
+                />
+                <p class="pt-2 text-sm font-semibold text-white">James White</p>
+                <p class="text-sm font-medium text-slate-100/70">
+                  COO at XYZ Corporation
+                </p>
+              </div>
             </div>
           </div>
-        </section> */}
+        </section>
+
+        <section class="sm:py-10 bg-blue-700 overflow-hidden" id="faq">
+          <div class="container mx-auto px-4">
+            <div class="relative py-16 px-8 bg-yelloww overflow-hidden rounded-3xl">
+              <div class="relative z-10 md:max-w-7xl mx-auto">
+                <div class="md:max-w-xl mb-10">
+                  <span class="inline-block mb-5 text-md text-white font-bold uppercase tracking-widest ">
+                    Frequently asked questions
+                  </span>
+                  <h2 class="font-heading text-4xl    text-white lg:text-5xl font-bold font-heading">
+                    Got questions? We’re here to help!
+                  </h2>
+                </div>
+                <div class="flex flex-wrap -m-3">
+                  <div class="w-full p-3">
+                    <div class="p-10 bg-white rounded-3xl">
+                      <div class="flex flex-wrap -m-2">
+                        <div class="w-full md:w-1/2 p-2">
+                          <h3 class="font-heading text-xl text-slate-800  font-black">
+                            How soon will I receive the voucher code once I make
+                            the payment?
+                          </h3>
+                        </div>
+                        <div class="w-full md:w-1/2 p-2">
+                          <p class="text-slate-700 font-medium">
+                            You will receive the voucher code immediately via
+                            email and SMS once you make the payment. The process
+                            is completely automated and takes only 30 seconds.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-full p-3">
+                    <div class="p-10 bg-white rounded-3xl">
+                      <div class="flex flex-wrap -m-2">
+                        <div class="w-full md:w-1/2 p-2">
+                          <h3 class="font-heading text-xl text-slate-800 font-black">
+                            Within what timeframe do I need to book the slot
+                            after purchasing the voucher?
+                          </h3>
+                        </div>
+                        <div class="w-full md:w-1/2 p-2">
+                          <p class="text-slate-700 font-medium">
+                            This voucher is valid for 11 months. It is important
+                            to complete your exam within this 11-month period
+                            starting from the date of purchase.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-full p-3">
+                    <div class="p-10 bg-white rounded-3xl">
+                      <div class="flex flex-wrap -m-2">
+                        <div class="w-full md:w-1/2 p-2">
+                          <h3 class="font-heading text-xl text-slate-800 font-black">
+                            Is this refundable?
+                          </h3>
+                        </div>
+                        <div class="w-full md:w-1/2 p-2">
+                          <p class="text-slate-700 font-medium">
+                            Sure, if you change your mind and plan not to appear
+                            for Toefl Academic and return the unused voucher
+                            code to us, we will happily refund 70% of the amount
+                            within 6 months of purchase.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="w-full py-12 md:py-24 lg:py-32 flex justify-center">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
@@ -384,6 +401,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         <section className="w-full py-12 md:py-24 lg:py-32 border-t flex justify-center bg-blue-700">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
@@ -396,7 +414,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mx-auto w-full max-w-sm space-y-2">
-              <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+              <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 justify-center">
                 <Link
                   className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 "
                   href="#"

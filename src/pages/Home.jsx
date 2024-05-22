@@ -84,16 +84,16 @@ export default function Home() {
             <div className="md:grid md:gap-60 md:grid-cols-2 items-center">
               <div
                 // className="hidden lg:block"
-                className="order-2 md:order-1"
+                className="order-1 md:order-2"
               >
                 <Player
                   autoplay
                   loop
                   src="https://lottie.host/df729c10-9a81-4bb3-aa6d-734913bfde44/fFjafXGhBE.json"
-                  className="h-48 md:h-[550px]"
+                  className="h-96 md:h-[550px]"
                 ></Player>
               </div>
-              <div className="flex flex-col justify-center space-y-4 order-1 md:order-2">
+              <div className="flex flex-col justify-center space-y-4 order-2 md:order-1">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                     Secure and Convenient Digital Wallet

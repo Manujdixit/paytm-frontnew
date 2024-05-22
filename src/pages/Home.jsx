@@ -198,11 +198,11 @@ export default function Home() {
               Here's what our <br />
               <span class="text-blue-700"> customers</span> have to say
             </h2>
-            <p class="text-lg font-medium text-slate-700">
+            <p class="text-lg font-medium text-slate-700 text-center">
               Discover how our service can benefit you
             </p>
           </div>
-          <div class="mt-8 grid grid-cols-1 lg:grid-cols-5 gap-5 w-full">
+          <div class="mt-8 grid grid-cols-1 lg:grid-cols-5 gap-5 w-full ">
             <div class="border p-7 rounded-xl bg-blue-700 drop-shadow-md border-neutral-800/50 col-span-2 flex flex-col gap-y-10 justify-between">
               <div class="flex flex-col gap-y-3.5">
                 <p class="font-bold text-xl text-white">

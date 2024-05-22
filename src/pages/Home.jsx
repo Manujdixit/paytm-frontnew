@@ -93,7 +93,7 @@ export default function Home() {
                   className="h-96 md:h-[550px]"
                 ></Player>
               </div>
-              <div className="flex flex-col justify-center space-y-4 order-2 md:order-1">
+              <div className="flex flex-col justify-center space-y-4 order-2 md:order-1 pb-8 md:pb-0">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                     Secure and Convenient Digital Wallet

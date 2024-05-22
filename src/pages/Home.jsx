@@ -18,7 +18,11 @@ export default function Home() {
 
   return (
     <>
-      <Navbar className="p-2" onMenuOpenChange={setIsMenuOpen}>
+      <Navbar
+        shouldHideOnScroll
+        className="p-2"
+        onMenuOpenChange={setIsMenuOpen}
+      >
         <NavbarContent>
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -77,8 +81,19 @@ export default function Home() {
       <main className="flex-1">
         <section className="w-full md:py-24 lg:py-36">
           <div className="container px-4 md:px-6  mx-auto">
-            <div className="lg:grid lg:gap-60 lg:grid-cols-2 items-center">
-              <div className="flex flex-col justify-center space-y-4">
+            <div className="md:grid md:gap-60 md:grid-cols-2 items-center">
+              <div
+                // className="hidden lg:block"
+                className="order-2 md:order-1"
+              >
+                <Player
+                  autoplay
+                  loop
+                  src="https://lottie.host/df729c10-9a81-4bb3-aa6d-734913bfde44/fFjafXGhBE.json"
+                  className="h-48 md:h-[550px]"
+                ></Player>
+              </div>
+              <div className="flex flex-col justify-center space-y-4 order-1 md:order-2">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                     Secure and Convenient Digital Wallet
@@ -97,19 +112,79 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="hidden lg:block">
-                <Player
-                  autoplay
-                  loop
-                  src="https://lottie.host/df729c10-9a81-4bb3-aa6d-734913bfde44/fFjafXGhBE.json"
-                  style={{ height: "550px", width: "550px" }}
-                ></Player>
-              </div>
             </div>
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100  flex justify-center">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-blue-700  flex justify-center">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm ">
+                  How it Works
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-white">
+                  Seamless Digital Wallet Experience
+                </h2>
+                <p className="max-w-[900px] text-slate-200 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
+                  Our virtual wallet app makes it easy to manage your finances
+                  on the go. Store your cards, send and receive payments, and
+                  track your spending all in one secure place.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-64">
+              <div className="flex flex-col justify-center space-y-4 lg:ml-8">
+                {" "}
+                {/* Added margin-left here */}
+                <ul className="grid gap-6">
+                  <li>
+                    <div className="grid gap-1 bg-white p-4 rounded-xl">
+                      <h3 className="text-xl font-bold text-black">
+                        Store Your Cards
+                      </h3>
+                      <p className="text-black ">
+                        Add your debit, credit, and loyalty cards to your
+                        digital wallet for easy access.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="grid gap-1 bg-white p-4 rounded-xl">
+                      <h3 className="text-xl font-bold text-black">
+                        Send and Receive
+                      </h3>
+                      <p className="text-black ">
+                        Securely send and receive payments with friends, family,
+                        and businesses.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="grid gap-1 bg-white p-4 rounded-xl">
+                      <h3 className="text-xl font-bold text-black">
+                        Track Spending
+                      </h3>
+                      <p className="text-black ">
+                        Monitor your transactions and spending history to better
+                        manage your finances.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <Player
+                className="hidden lg:block"
+                autoplay
+                loop
+                src="https://lottie.host/c10e3119-6f58-4fb7-a436-57be2e359856/wEEBIpa2sN.json"
+                style={{ height: "450px", width: "450px" }}
+              ></Player>
+            </div>
+          </div>
+        </section>
+
+        {/* <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100  flex justify-center">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -128,8 +203,6 @@ export default function Home() {
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-64">
               <div className="flex flex-col justify-center space-y-4 lg:ml-8">
-                {" "}
-                {/* Added margin-left here */}
                 <ul className="grid gap-6">
                   <li>
                     <div className="grid gap-1">
@@ -169,7 +242,120 @@ export default function Home() {
               ></Player>
             </div>
           </div>
-        </section>
+        </section> */}
+
+        {/* <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                  Testimonials
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  What Our Users Say
+                </h2>
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                  Hear from our satisfied customers about their experience with
+                  our virtual wallet app.
+                </p>
+              </div>
+              <Carousel className="w-full max-w-3xl">
+                <CarouselContent>
+                  <CarouselItem>
+                    <Card>
+                      <CardContent className="space-y-4">
+                        <blockquote className="text-lg font-semibold leading-snug">
+                          "The Wallet app has been a game-changer for managing
+                          my finances. It's so convenient and secure."
+                        </blockquote>
+                        <div className="flex items-center space-x-4">
+                          <img
+                            alt="Avatar"
+                            className="h-12 w-12 rounded-full"
+                            height="48"
+                            src="/placeholder.svg"
+                            style={{
+                              aspectRatio: "48/48",
+                              objectFit: "cover",
+                            }}
+                            width="48"
+                          />
+                          <div>
+                            <div className="font-medium">Jane Doe</div>
+                            <div className="text-sm text-gray-500 dark:text-gray-400">
+                              Small Business Owner
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Card>
+                      <CardContent className="space-y-4">
+                        <blockquote className="text-lg font-semibold leading-snug">
+                          "I love how the Wallet app makes it easy to track my
+                          spending and stay on top of my finances."
+                        </blockquote>
+                        <div className="flex items-center space-x-4">
+                          <img
+                            alt="Avatar"
+                            className="h-12 w-12 rounded-full"
+                            height="48"
+                            src="/placeholder.svg"
+                            style={{
+                              aspectRatio: "48/48",
+                              objectFit: "cover",
+                            }}
+                            width="48"
+                          />
+                          <div>
+                            <div className="font-medium">John Smith</div>
+                            <div className="text-sm text-gray-500 dark:text-gray-400">
+                              Freelance Designer
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Card>
+                      <CardContent className="space-y-4">
+                        <blockquote className="text-lg font-semibold leading-snug">
+                          "The Wallet app has simplified my financial life. I
+                          highly recommend it to anyone looking to better manage
+                          their money."
+                        </blockquote>
+                        <div className="flex items-center space-x-4">
+                          <img
+                            alt="Avatar"
+                            className="h-12 w-12 rounded-full"
+                            height="48"
+                            src="/placeholder.svg"
+                            style={{
+                              aspectRatio: "48/48",
+                              objectFit: "cover",
+                            }}
+                            width="48"
+                          />
+                          <div>
+                            <div className="font-medium">Sarah Lee</div>
+                            <div className="text-sm text-gray-500 dark:text-gray-400">
+                              Accountant
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
+          </div>
+        </section> */}
 
         <section className="w-full py-12 md:py-24 lg:py-32 flex justify-center">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">

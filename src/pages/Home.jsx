@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -10,15 +9,14 @@ import {
   Link,
   Button,
 } from "@nextui-org/react";
-import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
-import { Avatar } from "@nextui-org/avatar";
-import { Accordion, AccordionItem } from "@nextui-org/react";
 
 import "./home.css";
 import { Player } from "@lottiefiles/react-lottie-player";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
@@ -52,7 +50,7 @@ export default function Home() {
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem>
-            <Button as={Link} color="primary" href="#">
+            <Button as={Link} color="primary" href="/signup">
               Get started
             </Button>
           </NavbarItem>
@@ -188,140 +186,162 @@ export default function Home() {
           </div>
         </section>
 
-        <section class="max-w-5xl mx-auto w-full px-10 py-10 bg-white">
-          <div class="flex items-center justify-center flex-col gap-y-2 py-5">
+        <section className="max-w-5xl mx-auto w-full px-10 py-10 bg-white">
+          <div className="flex items-center justify-center flex-col gap-y-2 py-5">
             <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm">
               Testimonials
             </div>
 
-            <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl text-center">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center">
               Here's what our <br />
-              <span class="text-blue-700"> customers</span> have to say
+              <span className="text-blue-700"> customers</span> have to say
             </h2>
-            <p class="text-lg font-medium text-slate-700 text-center">
+            <p className="text-lg font-medium text-slate-700 text-center">
               Discover how our service can benefit you
             </p>
           </div>
-          <div class="mt-8 grid grid-cols-1 lg:grid-cols-5 gap-5 w-full ">
-            <div class="border p-7 rounded-xl bg-blue-700 drop-shadow-md border-neutral-800/50 col-span-2 flex flex-col gap-y-10 justify-between">
-              <div class="flex flex-col gap-y-3.5">
-                <p class="font-bold text-xl text-white">
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-5 gap-5 w-full ">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 100, damping: 10 }}
+              className="box border p-7 rounded-xl bg-blue-700 drop-shadow-md border-neutral-800/50 col-span-2 flex flex-col gap-y-10 justify-between"
+            >
+              <div className="flex flex-col gap-y-3.5">
+                <p className="font-bold text-xl text-white">
                   Efficient customer support
                 </p>
-                <p class="font-medium text-white">
+                <p className="font-medium text-white">
                   The customer support team at our service is incredibly
                   responsive and helpful. They went above and beyond to assist
                   me with my issue.
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <img
                   src="https://randomuser.me/api/portraits/women/43.jpg"
                   alt="Emily Smith"
-                  class="h-10 w-10"
+                  className="h-10 w-10"
                 />
-                <p class="pt-2 text-sm font-semibold text-white">Emily Smith</p>
-                <p class="text-sm font-medium text-slate-100/70">
+                <p className="pt-2 text-sm font-semibold text-white">
+                  Emily Smith
+                </p>
+                <p className="text-sm font-medium text-slate-100/70">
                   Marketing Manager at ABC Company
                 </p>
               </div>
-            </div>
-            <div class="border p-7 rounded-xl bg-neutral-900 drop-shadow-md border-neutral-800/50 col-span-3 flex flex-col gap-y-10 justify-between">
-              <div class="flex flex-col gap-y-3.5">
-                <p class="font-bold text-xl text-white">
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 100, damping: 10 }}
+              className="box border p-7 rounded-xl bg-neutral-900 drop-shadow-md border-neutral-800/50 col-span-3 flex flex-col gap-y-10 justify-between"
+            >
+              <div className="flex flex-col gap-y-3.5">
+                <p className="font-bold text-xl text-white">
                   Excellent product features
                 </p>
-                <p class="font-medium text-white">
+                <p className="font-medium text-white">
                   The features offered by our service are outstanding. They have
                   greatly improved our workflow and efficiency.
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <img
                   src="https://randomuser.me/api/portraits/men/34.jpg"
                   alt="Michael Johnson"
-                  class="h-10 w-10"
+                  className="h-10 w-10"
                 />
-                <p class="pt-2 text-sm font-semibold text-white">
+                <p className="pt-2 text-sm font-semibold text-white">
                   Michael Johnson
                 </p>
-                <p class="text-sm font-medium text-slate-100/70">
+                <p className="text-sm font-medium text-slate-100/70">
                   CEO at XYZ Corporation
                 </p>
               </div>
-            </div>
-            <div class="border p-7 rounded-xl bg-neutral-900 drop-shadow-md border-neutral-800/50 col-span-3 flex flex-col gap-y-10 justify-between">
-              <div class="flex flex-col gap-y-3.5">
-                <p class="font-bold text-xl text-white">
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 100, damping: 10 }}
+              className="box border p-7 rounded-xl bg-neutral-900 drop-shadow-md border-neutral-800/50 col-span-3 flex flex-col gap-y-10 justify-between"
+            >
+              <div className="flex flex-col gap-y-3.5">
+                <p className="font-bold text-xl text-white">
                   Seamless integration process
                 </p>
-                <p class="font-medium text-white">
+                <p className="font-medium text-white">
                   Integrating our systems with our service was smooth and
                   hassle-free. The support team guided us through every step of
                   the process.
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <img
                   src="https://randomuser.me/api/portraits/women/71.jpg"
                   alt="Sarah Brown"
-                  class="h-10 w-10"
+                  className="h-10 w-10"
                 />
-                <p class="pt-2 text-sm font-semibold text-white">Sarah Brown</p>
-                <p class="text-sm font-medium text-slate-100/70">
+                <p className="pt-2 text-sm font-semibold text-white">
+                  Sarah Brown
+                </p>
+                <p className="text-sm font-medium text-slate-100/70">
                   CTO at XYZ Corporation
                 </p>
               </div>
-            </div>
-            <div class="border p-7 rounded-xl bg-green-600 drop-shadow-md border-neutral-800/50 col-span-2 flex flex-col gap-y-10 justify-between">
-              <div class="flex flex-col gap-y-3.5">
-                <p class="font-bold text-xl text-white">
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 100, damping: 10 }}
+              className="border p-7 rounded-xl bg-green-600 drop-shadow-md border-neutral-800/50 col-span-2 flex flex-col gap-y-10 justify-between"
+            >
+              <div className="flex flex-col gap-y-3.5">
+                <p className="font-bold text-xl text-white">
                   Reliable service uptime
                 </p>
-                <p class="font-medium text-white">
+                <p className="font-medium text-white">
                   Our service has consistently maintained high uptime, ensuring
                   that our operations run smoothly without any disruptions.
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <img
                   src="https://randomuser.me/api/portraits/men/71.jpg"
                   alt="James White"
-                  class="h-10 w-10"
+                  className="h-10 w-10"
                 />
-                <p class="pt-2 text-sm font-semibold text-white">James White</p>
-                <p class="text-sm font-medium text-slate-100/70">
+                <p className="pt-2 text-sm font-semibold text-white">
+                  James White
+                </p>
+                <p className="text-sm font-medium text-slate-100/70">
                   COO at XYZ Corporation
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        <section class="sm:py-10 bg-blue-700 overflow-hidden" id="faq">
-          <div class="container mx-auto px-4">
-            <div class="relative py-16 px-8 bg-yelloww overflow-hidden rounded-3xl">
-              <div class="relative z-10 md:max-w-7xl mx-auto">
-                <div class="md:max-w-xl mb-10">
-                  <span class="inline-block mb-5 text-md text-white font-bold uppercase tracking-widest ">
+        <section className="sm:py-10 bg-blue-700 overflow-hidden" id="faq">
+          <div className="container mx-auto px-4">
+            <div className="relative py-16 px-8 bg-yelloww overflow-hidden rounded-3xl">
+              <div className="relative z-10 md:max-w-7xl mx-auto">
+                <div className="md:max-w-xl mb-10">
+                  <span className="inline-block mb-5 text-md text-white font-bold uppercase tracking-widest ">
                     Frequently asked questions
                   </span>
-                  <h2 class="font-heading text-4xl    text-white lg:text-5xl font-bold font-heading">
+                  <h2 className="font-heading text-4xl    text-white lg:text-5xl font-bold font-heading">
                     Got questions? We’re here to help!
                   </h2>
                 </div>
-                <div class="flex flex-wrap -m-3">
-                  <div class="w-full p-3">
-                    <div class="p-10 bg-white rounded-3xl">
-                      <div class="flex flex-wrap -m-2">
-                        <div class="w-full md:w-1/2 p-2">
-                          <h3 class="font-heading text-xl text-slate-800  font-black">
+                <div className="flex flex-wrap -m-3">
+                  <div className="w-full p-3">
+                    <div className="p-10 bg-white rounded-3xl">
+                      <div className="flex flex-wrap -m-2">
+                        <div className="w-full md:w-1/2 p-2">
+                          <h3 className="font-heading text-xl text-slate-800  font-black">
                             How soon will I receive the voucher code once I make
                             the payment?
                           </h3>
                         </div>
-                        <div class="w-full md:w-1/2 p-2">
-                          <p class="text-slate-700 font-medium">
+                        <div className="w-full md:w-1/2 p-2">
+                          <p className="text-slate-700 font-medium">
                             You will receive the voucher code immediately via
                             email and SMS once you make the payment. The process
                             is completely automated and takes only 30 seconds.
@@ -330,17 +350,17 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div class="w-full p-3">
-                    <div class="p-10 bg-white rounded-3xl">
-                      <div class="flex flex-wrap -m-2">
-                        <div class="w-full md:w-1/2 p-2">
-                          <h3 class="font-heading text-xl text-slate-800 font-black">
+                  <div className="w-full p-3">
+                    <div className="p-10 bg-white rounded-3xl">
+                      <div className="flex flex-wrap -m-2">
+                        <div className="w-full md:w-1/2 p-2">
+                          <h3 className="font-heading text-xl text-slate-800 font-black">
                             Within what timeframe do I need to book the slot
                             after purchasing the voucher?
                           </h3>
                         </div>
-                        <div class="w-full md:w-1/2 p-2">
-                          <p class="text-slate-700 font-medium">
+                        <div className="w-full md:w-1/2 p-2">
+                          <p className="text-slate-700 font-medium">
                             This voucher is valid for 11 months. It is important
                             to complete your exam within this 11-month period
                             starting from the date of purchase.
@@ -349,16 +369,16 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div class="w-full p-3">
-                    <div class="p-10 bg-white rounded-3xl">
-                      <div class="flex flex-wrap -m-2">
-                        <div class="w-full md:w-1/2 p-2">
-                          <h3 class="font-heading text-xl text-slate-800 font-black">
+                  <div className="w-full p-3">
+                    <div className="p-10 bg-white rounded-3xl">
+                      <div className="flex flex-wrap -m-2">
+                        <div className="w-full md:w-1/2 p-2">
+                          <h3 className="font-heading text-xl text-slate-800 font-black">
                             Is this refundable?
                           </h3>
                         </div>
-                        <div class="w-full md:w-1/2 p-2">
-                          <p class="text-slate-700 font-medium">
+                        <div className="w-full md:w-1/2 p-2">
+                          <p className="text-slate-700 font-medium">
                             Sure, if you change your mind and plan not to appear
                             for Toefl Academic and return the unused voucher
                             code to us, we will happily refund 70% of the amount

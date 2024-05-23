@@ -10,25 +10,27 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Protected Component={Signup} />} />
-          <Route path="/signin" element={<Protected Component={Signin} />} />
-          <Route
-            path="/dashboard"
-            element={<Protected Component={Dashboard} />}
-          />
-          <Route path="/send" element={<Protected Component={Sendmoney} />} />
-          <Route
-            path="/paymentsuccess"
-            element={<Protected Component={PaymentSuccess} />}
-          />
-          <Route path="/transactions" element={<Transactions />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route
+          path="/dashboard"
+          element={<Protected Component={Dashboard} />}
+        />
+        <Route path="/send" element={<Protected Component={Sendmoney} />} />
+        <Route
+          path="/paymentsuccess"
+          element={<Protected Component={PaymentSuccess} />}
+        />
+        <Route
+          path="/transactions"
+          element={<Protected Component={Transactions} />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
+
 export default App;

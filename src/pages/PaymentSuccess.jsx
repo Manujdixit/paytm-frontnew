@@ -1,7 +1,5 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { Appbar } from "../components/Appbar";
 
 const PaymentSuccess = () => {

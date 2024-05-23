@@ -1,0 +1,21 @@
+.button {
+  display: block;
+  padding: 12px;
+  margin: 5px 0;
+  text-decoration: none;
+  color: #383838;
+  border-radius: 15px;
+  font-size: medium;
+  font-weight: 600;
+  height: 48px;
+}
+
+.button:hover {
+  background: #0033ff20;
+  color: black;
+}
+
+.active {
+  background: #208cff; /* Change this color to whatever you like */
+  color: white; /* Ensure the text is readable */
+}

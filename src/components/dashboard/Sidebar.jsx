@@ -4,7 +4,7 @@ import SidebarComps from "./SidebarComps";
 export default () => {
   return (
     <>
-      <div className="bg-white min-w-52  h-screen flex flex-col justify-between p-3 ">
+      <div className="bg-white min-w-64  h-screen flex flex-col justify-between p-3 ">
         <div className="flex flex-col mt-16 my-16 mb-8">
           <div className="mx-auto">
             <img className="w-12" src="/wallet.png" alt="" />
